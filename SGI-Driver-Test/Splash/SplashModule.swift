@@ -9,7 +9,25 @@ import SwiftUI
 
 struct SplashModule: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color("Background")
+                .ignoresSafeArea()
+            
+            VStack{
+                Spacer()
+                HStack{
+                    Image("Logo")
+                        .frame(width: 250)
+                    
+                }
+                Spacer()
+                Text("Driving Test Application")
+                    .foregroundStyle(.white)
+                    .font(.custom("Poppins-Regular", size: 12))
+                    .kerning(4.0)
+                    
+            }
+        }
     }
 }
 

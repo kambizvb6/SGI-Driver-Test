@@ -14,43 +14,33 @@ struct Community: View {
         NavigationView{
             
             VStack(alignment: .center) {
-                Rectangle()
-                    
-                    .frame(width: .infinity, height: 40)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .foregroundStyle(Color("SearchBoxColor"))
-                    .padding(.horizontal,8)
-                    .overlay {
-                        HStack{
-                            Image(systemName: "magnifyingglass")
-                                .offset(x:20)
-                            Spacer()
-                            TextField("", text: $searchText)
-                                .offset(x:20)
-                                .textInputAutocapitalization(.never)
-                        }
-                        
-                        
-                    }
+                
+                
+                
+                Picker("What is your favorite color?", selection: $favoriteColor) {
+                    Text("Latest").tag(1)
+                    Text("Most View").tag(2)
+                    Text("Most Popular").tag(3)
+                }
+                .padding(.horizontal)
+                .pickerStyle(.segmented)
+                
+                
                 ZStack{
                     Color("Backbround-Color")
                     ScrollView {
-                        Picker("What is your favorite color?", selection: $favoriteColor) {
-                            Text("Red").tag(1)
-                            Text("Green").tag(2)
-                            Text("Blue").tag(3)
-                        }
-                        .padding()
-                        .pickerStyle(.segmented)
                         
-//                        Text("Value: \(favoriteColor)")
+                        //                        Text("Value: \(favoriteColor)")
                         
-                        ForEach(0...15, id: \.self) { index in
-                            CommunityPostView()
-                        }
+                        
+                            CommunityCell(userProfileImage: "UserProfile", userName: "Kambiz Dehghani", timeStamp: "2 Hour agao", postTitle: "Driver license in Regina City!", postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.", replyCount: "10 Reply")
+                            CommunityCell(userProfileImage: "victor", userName: "Victor", timeStamp: "1 Day ago", postTitle: "Can I make a right turn on a red light?", postContent: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.", replyCount: "100 Reply")
+                        
                     }
+                    .padding(.top,8)
                 }
                 
+                .searchable(text: $searchText, prompt: "Search...")
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle("Community")
@@ -59,10 +49,10 @@ struct Community: View {
                     
                 } label: {
                     Image("iconAddPost")
-                    .frame(width: 26, height: 26)
-                    .scaledToFit()
+                        .frame(width: 26, height: 26)
+                        .scaledToFit()
                 }
-
+                
             })
         }
     }
@@ -71,89 +61,91 @@ struct Community: View {
 #Preview {
     Community()
 }
-
-struct CommunityPostView: View {
-    var body: some View {
-        Rectangle()
-            .foregroundStyle(.white)
-            .cornerRadius(12)
-            .frame(width:UIScreen.main.bounds.width - 36,height: 218)
-            .padding(.bottom,4)
-            .overlay {
-                VStack(alignment: .leading) {
-                    
-                    HStack{
-                        VStack{
-                            Image("UserProfile")
-                                .resizable()
-                                .frame(width: 56, height: 56)
-                                .clipShape(Circle())
-                            Spacer()
-                        }
-                        
-                        VStack(alignment: .leading){
-                            HStack{
-                                Text("Kambiz Dehghani")
-                                    .font(
-                                        Font.custom("Poppins", size: 13)
-                                            .weight(.medium)
-                                    )
-                                Spacer()
-                                Text("32 day ago")
-                                    .foregroundStyle(Color("timeStampPost"))
-                                    .font(
-                                        Font.custom("Poppins", size: 13)
-                                            .weight(.medium)
-                                    )
-                            }
-                            Text("What is Lorem Ipsum")
-                                .font(
-                                    Font.custom("Poppins", size: 17)
-                                        .weight(.medium)
-                                )
-                            Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.")
-                                .font(
-                                    Font.custom("Poppins", size: 13)
-                                )
-                        }
-                        Spacer()
-                    }
-                    Divider()
-                    Spacer()
-                    HStack{
-                        Text("105 Reply")
-                            .font(
-                                Font.custom("Poppins", size: 14)
-                                    .weight(.semibold)
-                            )
-                            .foregroundColor(Color(red: 0.58, green: 0.72, blue: 0.32))
-                            .frame(width: 84, alignment: .topLeading)
-                        Spacer()
-                        Rectangle()
-                            .foregroundColor(.clear)
-                            .frame(width: 108, height: 34)
-                            .background(Color(red: 0.58, green: 0.72, blue: 0.32))
-                            .cornerRadius(8)
-                            .overlay {
-                                //
-                                HStack{
-                                    Button {
-                                        
-                                    } label: {
-                                        Image("iconReply")
-                                            .frame(width: 14.58335, height: 17.91667)
-                                        Text("Reply")
-                                            .font(Font.custom("Poppins", size: 15))
-                                            .foregroundStyle(Color.white)
-                                    }
-                                    
-                                }
-                                
-                            }
-                    }
-                }
-                .padding()
-                
-            }
-    }
-}
+//
+//struct CommunityPostView: View {
+//    var body: some View {
+//        Rectangle()
+//            .foregroundStyle(.white)
+//            .cornerRadius(12)
+//            .frame(width:UIScreen.main.bounds.width - 36,height: 218)
+//            .padding(.bottom,4)
+//            .overlay {
+//                VStack(alignment: .leading) {
+//                    
+//                    HStack{
+//                        VStack{
+//                            Image("UserProfile")
+//                                .resizable()
+//                                .frame(width: 56, height: 56)
+//                                .clipShape(Circle())
+//                            Spacer()
+//                        }
+//                        
+//                        VStack(alignment: .leading){
+//                            HStack{
+//                                Text("Kambiz Dehghani")
+//                                    .font(
+//                                        Font.custom("Poppins", size: 13)
+//                                            .weight(.medium)
+//                                    )
+//                                Spacer()
+//                                Text("32 day ago")
+//                                    .foregroundStyle(Color("timeStampPost"))
+//                                    .font(
+//                                        Font.custom("Poppins", size: 13)
+//                                            .weight(.medium)
+//                                    )
+//                            }
+//                            Text("What is Lorem Ipsum")
+//                                .font(
+//                                    Font.custom("Poppins", size: 17)
+//                                        .weight(.medium)
+//                                )
+//                            Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.")
+//                                .font(
+//                                    Font.custom("Poppins", size: 13)
+//                                )
+//                        }
+//                        Spacer()
+//                    }
+//                    Divider()
+//                    Spacer()
+//                    HStack{
+//                        Text("105 Reply")
+//                            .font(
+//                                Font.custom("Poppins", size: 14)
+//                                    .weight(.semibold)
+//                            )
+//                            .foregroundColor(Color(red: 0.58, green: 0.72, blue: 0.32))
+//                            .frame(width: 84, alignment: .topLeading)
+//                        Spacer()
+//                        Rectangle()
+//                            .foregroundColor(.clear)
+//                            .frame(width: 108, height: 34)
+//                            .background(Color(red: 0.58, green: 0.72, blue: 0.32))
+//                            .cornerRadius(8)
+//                            .overlay {
+//                                //
+//                                HStack{
+//                                    Button {
+//                                        
+//                                    } label: {
+//                                        Image("iconReply")
+//                                            .frame(width: 14.58335, height: 17.91667)
+//                                        Text("Reply")
+//                                            .font(Font.custom("Poppins", size: 15))
+//                                            .foregroundStyle(Color.white)
+//                                    }
+//                                    
+//                                }
+//                                
+//                            }
+//                    }
+//                }
+//                
+//                .padding()
+//                
+//            }
+//            .padding(.top)
+//    }
+//}

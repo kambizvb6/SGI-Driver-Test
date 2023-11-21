@@ -9,7 +9,20 @@ import SwiftUI
 
 struct CommunityReplys: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            Color("Backbround-Color").ignoresSafeArea()
+            ScrollView{
+                Rectangle()
+                   .foregroundStyle(.white)
+                   .frame(width: UIScreen.main.bounds.width - 36,height: 300)
+                   .clipShape(RoundedRectangle(cornerRadius: 8))
+                   .overlay {
+                       
+                   }
+                   
+            }
+        }
+       
     }
 }
 

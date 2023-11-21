@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showSplash = true
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack{
+            if showSplash {
+                SplashModule()
+                    .transition(.opacity)
+                    .animation(.easeIn, value: 1.5)
+            } else {
+                Dashborad()
+            }
         }
-        .padding()
+        .onAppear(perform: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                withAnimation {
+                    self.showSplash = false
+                }
+            }
+        })
     }
 }
 
