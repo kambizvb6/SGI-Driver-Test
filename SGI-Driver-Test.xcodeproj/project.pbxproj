@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		083D6DCC2B0FC80200042D12 /* DashboradView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D6DCB2B0FC80200042D12 /* DashboradView.swift */; };
 		087B7BA62AFBEB7900931FE4 /* CommunityMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087B7BA52AFBEB7900931FE4 /* CommunityMain.swift */; };
 		088934902B011E8C00FDC1F1 /* CommunityReplys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889348F2B011E8C00FDC1F1 /* CommunityReplys.swift */; };
 		08B2FE562AF585D300DAF51E /* Dashborad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FE552AF585D300DAF51E /* Dashborad.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		083D6DCB2B0FC80200042D12 /* DashboradView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboradView.swift; sourceTree = "<group>"; };
 		087B7BA52AFBEB7900931FE4 /* CommunityMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityMain.swift; sourceTree = "<group>"; };
 		0889348F2B011E8C00FDC1F1 /* CommunityReplys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityReplys.swift; sourceTree = "<group>"; };
 		08B2FE552AF585D300DAF51E /* Dashborad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashborad.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083D6DC82B0FC7EB00042D12 /* Dashborad */ = {
+			isa = PBXGroup;
+			children = (
+				083D6DCB2B0FC80200042D12 /* DashboradView.swift */,
+			);
+			path = Dashborad;
+			sourceTree = "<group>";
+		};
 		087B7BA42AFBEAE200931FE4 /* Community */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +136,7 @@
 		08B7D5542AF2DC4900851FD5 /* SGI-Driver-Test */ = {
 			isa = PBXGroup;
 			children = (
+				083D6DC82B0FC7EB00042D12 /* Dashborad */,
 				087B7BA42AFBEAE200931FE4 /* Community */,
 				08B2FE572AF590F000DAF51E /* Profile */,
 				08B2FE542AF585C000DAF51E /* Tabbar */,
@@ -271,6 +282,7 @@
 			files = (
 				08B7D5652AF2DC7800851FD5 /* SplashModule.swift in Sources */,
 				08B2FE592AF590FC00DAF51E /* Profile.swift in Sources */,
+				083D6DCC2B0FC80200042D12 /* DashboradView.swift in Sources */,
 				08B7D5582AF2DC4900851FD5 /* ContentView.swift in Sources */,
 				08C2DE802B05517900D72998 /* CommunityCell.swift in Sources */,
 				087B7BA62AFBEB7900931FE4 /* CommunityMain.swift in Sources */,
@@ -418,7 +430,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +460,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

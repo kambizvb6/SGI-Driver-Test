@@ -15,7 +15,7 @@ struct Dashborad: View {
     var body: some View {
         TabView (selection: $selectedTab)
         {
-            Text("Dashborad")
+            DashboradView()
                 .tag("1")
                 .tabItem {
                     Label("", image: selectedTab == "1" ? "DashboradSelected" : "Dashborad" )
