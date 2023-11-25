@@ -36,6 +36,7 @@ struct DashboradView: View {
                     ScrollView(.horizontal,showsIndicators: false){
                         HStack{
                             DashboradItemMenu(bgColor: Color("StudyColor"), title: "Study", imageName: "Study")
+                                
                             DashboradItemMenu(bgColor: Color("FlashCardColor"), title: "Flash Card", imageName: "FlashCard")
                             DashboradItemMenu(bgColor: Color("VideoColor"), title: "Video", imageName: "Video")
                             DashboradItemMenu(bgColor: Color("TipsColor"), title: "Tips", imageName: "Tips")
@@ -160,7 +161,7 @@ struct ProgressBar : View {
             
             Circle()
                 .trim(from:0.0, to: CGFloat(min(self.progress, 1.0)))
-                .stroke(style: StrokeStyle(lineWidth: 10.0, lineCap: .round, lineJoin: .round))
+                .stroke(style: StrokeStyle(lineWidth: 15.0, lineCap: .round, lineJoin: .round))
                 .foregroundStyle(color)
                 .rotationEffect(Angle(degrees: 270))
                 .animation(.easeInOut(duration: 1.9))
